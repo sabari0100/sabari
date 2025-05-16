@@ -3,33 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name - Resume</title>
-   
+  <title>My Resume</title>
   <style>
-  
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #0077cc;
+    }
 
-
-    /* Reset some default styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --accent-color: #66ccff;
     }
 
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #eaeef3;
-      color: #2c3e50;
-      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
     .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
     }
 
     header {
@@ -38,147 +36,95 @@
     }
 
     header h1 {
-      font-size: 2.8rem;
-      color: #1e3a8a;
+      margin: 0;
+      font-size: 2.5em;
     }
 
     header p {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: #4b5563;
+      margin-top: 5px;
+      font-size: 1.1em;
     }
 
-    h2 {
-      font-size: 1.6rem;
-      border-left: 5px solid #3b82f6;
-      padding-left: 10px;
-      margin-bottom: 15px;
-      color: #1e40af;
+    header button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
-    .skills {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    h2 {
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 5px;
     }
 
-    .skills li {
-      background-color: #e0f2fe;
-      color: #0369a1;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background-color 0.3s;
-    }
-
-    .skills li:hover {
-      background-color: #bae6fd;
-    }
-
-    .job h3 {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-      color: #0f172a;
-    }
-
-    .job p {
-      font-style: italic;
-      margin-bottom: 10px;
-      color: #6b7280;
-    }
-
-    .job ul {
+    ul {
       padding-left: 20px;
     }
 
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: #9ca3af;
-      border-top: 1px solid #d1d5db;
-      padding-top: 20px;
-      margin-top: 40px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-      }
-
-      .skills {
-        flex-direction: column;
-        gap: 6px;
-      }
+      padding: 20px 0;
+      font-size: 0.9em;
+      border-top: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
     <header>
-      <h1>Your Name</h1>
-      <p>Web Developer | Designer | Tech Enthusiast</p>
-      <p>Email: your.email@example.com | Phone: (123) 456-7890 | LinkedIn: linkedin.com/in/yourname</p>
+      <h1>John Doe</h1>
+      <p>Web Developer | Designer | Problem Solver</p>
+      <button onclick="toggleTheme()">Toggle Theme</button>
     </header>
 
-    <section>
-      <h2>Profile</h2>
-      <p>
-        A passionate web developer with experience in building responsive websites and applications. Strong knowledge in HTML, CSS, JavaScript, and modern web frameworks.
-      </p>
+    <section class="summary">
+      <h2>Summary</h2>
+      <p>Passionate web developer with 5+ years of experience creating dynamic and responsive websites and applications.</p>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Git & GitHub</li>
-        <li>Responsive Design</li>
-        <li>Figma</li>
-        <li>Bootstrap</li>
-      </ul>
-    </section>
-
-    <section>
+    <section class="experience">
       <h2>Experience</h2>
       <div class="job">
-        <h3>Frontend Developer - XYZ Company</h3>
-        <p><em>Jan 2023 - Present</em></p>
+        <h3>Senior Developer - XYZ Corp</h3>
+        <p>Jan 2020 - Present</p>
         <ul>
-          <li>Developed and maintained the company website using React.</li>
-          <li>Collaborated with backend developers to integrate APIs.</li>
-          <li>Ensured mobile responsiveness and cross-browser compatibility.</li>
+          <li>Led a team of 5 developers</li>
+          <li>Built scalable web apps using React and Node.js</li>
         </ul>
       </div>
     </section>
 
-    <section>
+    <section class="education">
       <h2>Education</h2>
-      <p><strong>B.Sc. in Computer Science</strong> - ABC University, 2022</p>
+      <p>BSc in Computer Science - ABC University (2015 - 2019)</p>
     </section>
-	
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML/CSS/JavaScript</li>
+        <li>React, Node.js</li>
+        <li>Git, REST APIs</li>
+      </ul>
+    </section>
 
     <footer>
-      &copy; 2025 Your Name. All rights reserved.
+      <p>Contact: john@example.com | +123-456-7890</p>
     </footer>
   </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
